@@ -1,0 +1,59 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 15px;
+    padding: 10px 13vw 0;
+    box-shadow: 0 2px 5px 5px rgba(0,0,0,0.1);
+
+    @media only screen and (max-width: 62.5em) {
+        padding: 5px 5px 0;
+    }
+
+    &__logo {
+        width: 15rem;
+    }
+
+    &__nav {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        flex: .9;
+        font-size: 1.7rem;
+
+        &-left {
+            margin-bottom: 1rem;
+        }
+
+        &-right {
+            &--top {
+                margin-bottom: 1rem;
+            }
+
+            &--bottom {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 5px;
+                background-color: rgba(0,0,0,0.2);
+            }
+        }  
+        
+        &-link {
+            &:not(:last-child) {
+                margin-right: 3rem;
+            }
+
+            &:hover {
+                color: red;
+            }
+
+        }
+    }
+}
+
+.cart__logo {
+    width: 4rem;
+    fill: red;
+}

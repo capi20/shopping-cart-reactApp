@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+
+import './Slider.scss'
 // import sliderData from '../server/banners/index.get.json'
-import offer1 from '../images/offers/offer1.jpg'
-import offer2 from '../images/offers/offer2.jpg'
-import offer3 from '../images/offers/offer3.jpg'
-import offer4 from '../images/offers/offer4.jpg'
-import offer5 from '../images/offers/offer5.jpg'
+import offer1 from '../../images/offers/offer1.jpg'
+import offer2 from '../../images/offers/offer2.jpg'
+import offer3 from '../../images/offers/offer3.jpg'
+import offer4 from '../../images/offers/offer4.jpg'
+import offer5 from '../../images/offers/offer5.jpg'
 
 const sliderData = [offer1, offer2, offer3, offer4, offer5]
 
