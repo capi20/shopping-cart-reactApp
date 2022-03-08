@@ -1,0 +1,43 @@
+.input {
+    position: relative;
+    height: 4rem;
+    width: 30rem;
+    margin-bottom: 25px;
+
+    &__label {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        pointer-events: none;
+        transition: all 0.35s;
+    }
+}
+
+input {
+    width: inherit;
+    height: inherit;
+    border: none;
+    border-bottom: 1.5px solid black;
+    outline: none;
+    font-size: 1.6rem;
+    transition: all 0.35s;
+
+    &:focus {
+        border-color: red;
+    }
+
+    &:valid{
+        border-color: #0fa5a2;
+    }
+
+    &:focus ~ .input__label {
+        color: red;
+        transform: translate(-.3rem, -3rem) scale(0.875);
+    }
+      
+    &:valid ~ .input__label {
+        color: #0fa5a2;
+        transform: translate(-.3rem, -3rem) scale(0.875);
+    }
+}

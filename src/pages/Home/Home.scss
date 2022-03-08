@@ -1,9 +1,7 @@
 .home {
-    &__bottom {
-        padding: 0 13vw;
+    padding: 0 13vw;
 
-        @media only screen and (max-width: 62.5em) {
-            padding: 0;
-        }
+    @media only screen and (max-width: 62.5em) {
+        padding: 0;
     }
 }

@@ -22,10 +22,10 @@ const Header = () => {
             </div>
             <div className="header__nav-right">
                 <div className="header__nav-right--top">
-                    <NavLink to="/" className="header__nav-link">
+                    <NavLink to="/signin" className="header__nav-link">
                         SignIn    
                     </NavLink>
-                    <NavLink to="/products" className="header__nav-link">
+                    <NavLink to="/register" className="header__nav-link">
                         Register    
                     </NavLink>
                 </div>
