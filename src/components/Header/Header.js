@@ -8,7 +8,9 @@ import cartLogo from '../../static/images/cart.svg'
 const Header = () => {
   return (
     <header className="header">
-        <img src={logo} alt="logo" className="header__logo"/>
+        <Link to="/">
+            <img src={logo} alt="logo" className="header__logo"/>
+        </Link>
         <nav className="header__nav">
             <div className="header__nav-left">
                 <NavLink to="/" className="header__nav-link">

@@ -6,7 +6,10 @@
     font-size: 1.6rem;
     text-align: center;
     padding: 20px;
-    box-shadow: 0 10px 10px -10px #000;
+    
+    &:not(:last-child) {
+        box-shadow: 0 10px 10px -10px #000;
+    }
 
     &__image {
         width: 40%;
@@ -19,4 +22,8 @@
             margin-bottom: 2rem;
         }
     }
+}
+
+.reverse {
+    flex-direction: row-reverse;
 }
