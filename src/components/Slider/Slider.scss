@@ -4,13 +4,15 @@
     justify-content: center;
     align-items: center;
     height: auto;
+    box-shadow: 0 10px 10px -10px #000;
+    margin-bottom: 3rem;
 
     &__btn {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        font-size: 2rem;
-        padding: 1rem;
+        font-size: 1.6rem;
+        padding: .7rem;
         color: #fff;
         background-color: rgba(0,0,0,0.5);
         border: none;
@@ -32,7 +34,7 @@
 
     &__dots {
         position: absolute;
-        bottom: 0;
+        bottom: 2rem;
         display: flex;
         align-items: center;
 

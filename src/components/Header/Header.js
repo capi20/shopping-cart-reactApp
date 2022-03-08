@@ -2,8 +2,8 @@ import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
 import './Header.scss'
-import logo from '../../images/logo.png'
-import cartLogo from '../../images/cart.svg'
+import logo from '../../static/images/logo.png'
+import cartLogo from '../../static/images/cart.svg'
 
 const Header = () => {
   return (

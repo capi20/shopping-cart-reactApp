@@ -1,14 +1,7 @@
 import React, { useState } from 'react'
 
 import './Slider.scss'
-// import sliderData from '../server/banners/index.get.json'
-import offer1 from '../../images/offers/offer1.jpg'
-import offer2 from '../../images/offers/offer2.jpg'
-import offer3 from '../../images/offers/offer3.jpg'
-import offer4 from '../../images/offers/offer4.jpg'
-import offer5 from '../../images/offers/offer5.jpg'
-
-const sliderData = [offer1, offer2, offer3, offer4, offer5]
+import sliderData from '../../server/banners/index.get.json'
 
 const Slider = () => {
     const [slideIndex, setSlideIndex] = useState(0)
@@ -28,7 +21,7 @@ const Slider = () => {
                 sliderData.map((banner, i) => {
                     return (
                         <div className={i === slideIndex ? 'slide active' : 'slide'}>
-                            {i === slideIndex && (<img key={i} src={banner} alt="Banner" className="slider__img"/>)}
+                            {i === slideIndex && (<img key={banner.id} src={banner.bannerImageUrl} alt={banner.bannerImageAlt} className="slider__img"/>)}
                         </div>
                     )
                 })
