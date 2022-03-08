@@ -28,9 +28,9 @@ const Slider = () => {
             }
             <div className="slider__dots">
                 {
-                    sliderData.map((_, index) => {
+                    sliderData.map((banner, index) => {
                         return (
-                            <div key={index} className={index === slideIndex ? 'dot-active' : ''} onClick={() => currentSlide(index)}></div>
+                            <div key={banner.id} className={index === slideIndex ? 'dot-active' : ''} onClick={() => currentSlide(index)}></div>
                         )
                     })
                 }    

@@ -1,8 +1,8 @@
 import React from 'react'
 
 import './Form.scss'
-import Button from '../components/Button/Button'
-import Input from '../components/Input/Input'
+import Button from '../Button/Button'
+import Input from '../Input/Input'
 
 const Form = ({heading, description, btnText, form}) => {
     return (
@@ -16,7 +16,7 @@ const Form = ({heading, description, btnText, form}) => {
                     return <Input label={el.label} 
                         val={el.val} 
                         changed={(e) => el.handler(e.target.value)} 
-                        placeholder={el.placeholder}/>
+                        type={el.type}/>
                     })}
                     <Button classes="w-100 mt-2 mb-2" text={btnText}/>
             </form>

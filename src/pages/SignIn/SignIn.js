@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import Form from '../../Form/Form'
+import Form from '../../components/Form/Form'
 
 const SignIn = () => {
     const [email, setEmail] = useState('')
@@ -17,12 +17,14 @@ const SignIn = () => {
         {
             label:"Email",
             val: email,
-            handler: setEmail
+            handler: setEmail,
+            type:"email"
         },
         {
             label:"Password",
             val: password,
-            handler: setPassword
+            handler: setPassword,
+            type: "password"
         }
     ]
 
@@ -40,23 +42,26 @@ const SignIn = () => {
         {
             label:"Email",
             val: email,
-            handler: setEmail
+            handler: setEmail,
+            type: "email"
         },
         {
             label:"Password",
             val: password,
-            handler: setPassword
+            handler: setPassword,
+            type: "password"
         },
         {
             label: "Confirm Password",
             val: confirmPassword,
-            handler: setConfirmPassword
+            handler: setConfirmPassword,
+            type: "password"
         }
     ]
 
     return (
         <Form heading={isSignup ? 'Signup' : 'Login'} 
-            description={isSignup ? "We do not share your personal details wity anyone." : "Get access to your Orders, Wishlist and Recommendations"}
+            description={isSignup ? "We do not share your personal details with anyone." : "Get access to your Orders, Wishlist and Recommendations"}
             btnText={isSignup ? 'Signup' : 'Login'} 
             form={isSignup ? signupForm : loginForm}/>
     )

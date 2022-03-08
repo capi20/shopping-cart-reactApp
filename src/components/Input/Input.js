@@ -2,10 +2,10 @@ import React from 'react'
 
 import './Input.scss'
 
-const Input = ({label, val, changed}) => {
+const Input = ({label, val, changed, type}) => {
   return (
     <div className="input">
-        <input className="input__box" value={val} onChange={changed} required/>
+        <input type={type ? type : "text"} value={val} onChange={changed} required/>
         <div className="input__label">{label}</div>
     </div>
   )

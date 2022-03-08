@@ -1,8 +1,14 @@
+@import '../../styles/variables.scss';
+
 .input {
     position: relative;
     height: 4rem;
-    width: 30rem;
+    width: 40rem;
     margin-bottom: 25px;
+
+    @media only screen and (max-width: $bp-medium) {
+        width: 35rem;
+    }
 
     &__label {
         position: absolute;
