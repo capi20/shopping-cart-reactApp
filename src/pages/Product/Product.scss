@@ -1,0 +1,16 @@
+.product__wrapper {
+    padding: 0 13vw;
+    display: flex;
+
+    @media only screen and (max-width: 62.5em) {
+        padding: 0;
+    }
+}
+
+.products__list {
+    flex: 1;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+}

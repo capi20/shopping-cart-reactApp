@@ -17,7 +17,8 @@ const Home = () => {
                   heading={category.name}
                   description={category.description}
                   btnText={category.key}
-                  index={index}/>
+                  index={index}
+                  id={category.id}/>
               )
           })}
       </main>

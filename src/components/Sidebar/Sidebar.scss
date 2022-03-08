@@ -1,0 +1,25 @@
+@import "../../styles/variables.scss";
+
+.sidebar {
+    background-color: $color-grey-light-1;
+    font-size: 1.7rem;
+    flex: 0.25;
+
+    @media only screen and (max-width: $bp-medium) {
+        flex: 0.5;
+    }
+
+    &__item {
+        list-style: none;
+        padding: 15px;
+        border-bottom: 1px solid #000;
+
+        &:hover {
+            background-color: $color-grey-light-2;
+        }
+
+        &.active {
+            background-color: $color-grey-light-2;
+        }
+    }
+}
