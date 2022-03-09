@@ -2,6 +2,7 @@ import React from 'react'
 import { useCartItems, useModalState } from '../../misc/custom-hooks'
 import Button from '../Button/Button'
 import Modal from '../Modal/Modal'
+import ProductRow from '../ProductRow/ProductRow'
 
 import './CartIcon.scss'
 
@@ -22,8 +23,28 @@ const CartIcon = () => {
                     <span onClick={close} className="cart__top-icon">x</span>
                 </div>
                 <div className="cart__middle">
-                    <h3 className="mb-3">No items in your cart</h3>
-                    <p>Your favourite items are just a click away</p>    
+                    {myCart.count === 0 && (
+                        <>
+                            <h3 className="mb-3">No items in your cart</h3>
+                            <p>Your favourite items are just a click away</p> 
+                        </>
+                    )}
+                    {
+                        myCart.count !== 1 && (
+                            <>
+                                {
+                                    myCart.cart.map(item => {
+                                        return <ProductRow
+                                            key={item.id}
+                                            name={item.name}
+                                            image={item.image}
+                                            price={item.price}
+                                        />
+                                    })
+                                }
+                            </>
+                        )
+                    } 
                 </div>
                 <div className="cart__bottom">
                     <Button classes="w-100">

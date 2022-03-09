@@ -1,0 +1,25 @@
+.productRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 1.5rem;
+
+    &__image {
+        width: 15%;
+    }
+    
+    &__right {
+        flex: 0.9;
+
+        &-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &--left > *:not(:last-child) {
+                margin-right: 1rem;
+            }
+        }
+    }
+}
