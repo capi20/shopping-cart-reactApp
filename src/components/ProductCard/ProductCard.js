@@ -16,7 +16,8 @@ const ProductCard = ({name, image, description, price, id}) => {
             id: id,
             name: name,
             image: image,
-            price: price
+            price: price,
+            itemCount: 1
         }
         dispatchCart({type: 'ADD', item: addedItem})
     }

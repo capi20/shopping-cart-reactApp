@@ -11,6 +11,8 @@ const CartIcon = () => {
 
     const [myCart, ] = useCartItems()
 
+    // console.log(myCart)
+
     return (
         <>
             <div className="cart" onClick={() => open()}>
@@ -30,15 +32,17 @@ const CartIcon = () => {
                         </>
                     )}
                     {
-                        myCart.count !== 1 && (
+                        myCart.count !== 0 && (
                             <>
                                 {
-                                    myCart.cart.map(item => {
+                                    Object.keys(myCart.cart).map((item, i) => {
                                         return <ProductRow
-                                            key={item.id}
-                                            name={item.name}
-                                            image={item.image}
-                                            price={item.price}
+                                            key={i}
+                                            id={item}
+                                            name={myCart.cart[item].name}
+                                            image={myCart.cart[item].image}
+                                            price={myCart.cart[item].price}
+                                            itemCount={myCart.cart[item].itemCount}
                                         />
                                     })
                                 }

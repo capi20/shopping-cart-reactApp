@@ -17,7 +17,18 @@ const updateObject = (oldObject, updatedProperties) => {
 }
 
 const addItem = (state, action) => {
-    const updatedCart = [...state.cart].concat(action.item)
+    let updatedCart = {}
+
+    if (Object.keys(state.cart).includes(action.item.id)) {
+        const modifiedData = {...state.cart[action.item.id], itemCount: state.cart[action.item.id].itemCount + 1}
+        // console.log(modifiedData)
+
+        updatedCart = {...state.cart, [action.item.id]: {...modifiedData}}
+    } else {
+        updatedCart = {...state.cart, [action.item.id]: {...action.item}}
+        console.log(updatedCart)
+    }
+     
     const updatedState = {
         cart: updatedCart,
         amount: state.amount + action.item.price,
@@ -25,25 +36,36 @@ const addItem = (state, action) => {
         purchasing: true
     }
 
+    // console.log(updatedState)
+
     return updateObject(state, updatedState)
 }
 
 const removeItem = (state, action) => {
-    const itemIndex = state.cart.findIndex(
-        cartItem => cartItem.id === action.itemId
-    )
-    let updatedCart = [...state.cart]
+    const itemObj = state.cart[action.item]
+
+    let updatedCart = {}
     let updatedAmount = 0
     let updatedCount = 0
     let purchasingState = null
 
-    if (itemIndex >= 0) {
-        updatedAmount = state.amount - updatedCart[itemIndex].price
+    if (itemObj) {
+        updatedAmount = state.amount - itemObj.price
         updatedCount = state.count - 1
-        updatedCart.splice(itemIndex, 1)
+        let modifiedData = {...state.cart[action.item], itemCount: state.cart[action.item].itemCount - 1}
+
+        if (modifiedData.itemCount === 0){
+            updatedCart = {...state.cart}
+            delete updatedCart[action.item]
+        } else {
+            updatedCart = {...state.cart, [action.item]: {...modifiedData}}
+        }
+
+        console.log(updatedCart)
+        
         purchasingState = updatedCount > 0 ? true : false
     } else {
-        console.warn(`Can't remove product (id: ${action.itemId}) as it's not in cart!`)
+        console.warn(`Can't remove product (id: ${action.item}) as it's not in cart!`)
     }
 
     const updatedState = {
@@ -71,7 +93,7 @@ const CartContext = createContext()
 
 export const CartProvider = ({children}) => {
     const [state, dispatch] = useReducer(reducer, {
-        cart: [],
+        cart: {},
         amount: 0,
         count: 0,
         purchasing: false
