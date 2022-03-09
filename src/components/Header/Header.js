@@ -6,6 +6,7 @@ import logo from '../../static/images/logo.png'
 import CartIcon from '../CartIcon/CartIcon'
 
 const Header = () => {
+
     return (
         <header className="header">
             <Link to="/">

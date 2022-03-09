@@ -1,5 +1,5 @@
 import React from 'react'
-import { useModalState } from '../../misc/custom-hooks'
+import { useCartItems, useModalState } from '../../misc/custom-hooks'
 import Button from '../Button/Button'
 import Modal from '../Modal/Modal'
 
@@ -8,15 +8,17 @@ import './CartIcon.scss'
 const CartIcon = () => {
     const {isOpen, open, close} = useModalState()
 
+    const [myCart, ] = useCartItems()
+
     return (
         <>
             <div className="cart" onClick={() => open()}>
                 <img src="/static/images/cart.svg" alt="cart logo" className="cart__logo"/>
-                <span className="cart__count">0 items</span>
+                <span className="cart__count">{myCart.count} items</span>
             </div>
             <Modal isOpen={isOpen} close={close}>
                 <div className="cart__top">
-                    <h4>My Cart (0 items)</h4>
+                    <h4>My Cart ({myCart.count} items)</h4>
                     <span onClick={close} className="cart__top-icon">x</span>
                 </div>
                 <div className="cart__middle">
@@ -24,7 +26,15 @@ const CartIcon = () => {
                     <p>Your favourite items are just a click away</p>    
                 </div>
                 <div className="cart__bottom">
-                    <Button text="Start shopping" classes="w-100"/>
+                    <Button classes="w-100">
+                        {myCart.count === 0 && "Start shopping"}
+                        {myCart.count !== 0 && (
+                            <div className="d-flex justify-content-between">
+                                <span>Proceed to Checkout</span>
+                                <span>Rs.{myCart.amount}</span>
+                            </div>
+                        )}
+                    </Button>
                 </div>  
             </Modal>
         </>

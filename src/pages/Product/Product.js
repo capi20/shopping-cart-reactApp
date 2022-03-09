@@ -11,8 +11,6 @@ const Product = () => {
   const paramId = useParams()
   const categoryId = paramId.id
 
-  // console.log(productData)
-
   useEffect(() => {
     let displayData = []
     if (categoryId) {
@@ -20,12 +18,8 @@ const Product = () => {
     } else {
       displayData = [...productData]
     }
-    
-    console.log(displayData)
     setFilteredData([...displayData])
   }, [categoryId])
-
-  console.log(filteredData)
   
     return (
       <div className="product__wrapper">
@@ -39,7 +33,8 @@ const Product = () => {
                   name={product.name}
                   image={product.imageURL}
                   description={product.description}
-                  price={product.price}/>
+                  price={product.price}
+                  id={product.id}/>
               )
             })
           }  

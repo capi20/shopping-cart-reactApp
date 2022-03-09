@@ -1,13 +1,15 @@
+@import '../../styles/variables.scss';
+
 .button {
     font-size: 1.6rem;
     padding: 1rem 1.5rem;
-    background-color: hsl(350, 70%, 60%);
+    background-color: $color-primary;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     
     &:hover {
-        background-color: hsl(10%, 70%, 40%);
+        background-color: $color-primary-dark;
     }
 }

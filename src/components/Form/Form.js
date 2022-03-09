@@ -18,7 +18,7 @@ const Form = ({heading, description, btnText, form}) => {
                         changed={(e) => el.handler(e.target.value)} 
                         type={el.type}/>
                     })}
-                    <Button classes="w-100 mt-2 mb-2" text={btnText}/>
+                    <Button classes="w-100 mt-2 mb-2">{btnText}</Button>
             </form>
         </div>
     )

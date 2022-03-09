@@ -5,20 +5,23 @@ import Home from './pages/Home/Home';
 import Product from './pages/Product/Product';
 import SignIn from './pages/SignIn/SignIn'
 import './styles/main.scss'
+import { CartProvider } from './misc/custom-hooks';
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <Routes>
-        <Route path="/signin" element={<SignIn/>}/>
-        <Route path="/register" element={<SignIn/>}/>
-        <Route path="/products" element={<Product/>}/>
-        <Route path="/products/:id" element={<Product/>}/>
-        <Route path="/" element={<Home/>}/>
-      </Routes>
-      <Footer/>
-    </div>
+    <CartProvider>
+      <div className="App">
+        <Header/>
+        <Routes>
+          <Route path="/signin" element={<SignIn/>}/>
+          <Route path="/register" element={<SignIn/>}/>
+          <Route path="/products" element={<Product/>}/>
+          <Route path="/products/:id" element={<Product/>}/>
+          <Route path="/" element={<Home/>}/>
+        </Routes>
+        <Footer/>
+      </div>
+    </CartProvider>
   );
 }
 

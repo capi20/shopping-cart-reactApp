@@ -17,9 +17,7 @@ const CategoryCard = ({ image, heading, description, btnText, index, id}) => {
             <div className="category__right">
                 <h2 className="category__heading">{heading}</h2>
                 <p className="category__description">{description}</p>
-                <Button
-                    text={`Explore ${btnText}`}
-                    onClick={() => onBtnClick(id)}/>
+                <Button onClick={() => onBtnClick(id)}>{`Explore ${btnText}`}</Button>
             </div>
         </div>
     )
