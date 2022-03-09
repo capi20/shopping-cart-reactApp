@@ -25,13 +25,13 @@ const ProductRow = ({id, name, image, price, itemCount}) => {
         <div className="productRow">
             <img src={image} alt={name} className="productRow__image"/>
             <div className="productRow__right">
-                <h3  className="productRow__name mb-2">{name}</h3>
+                <h4  className="productRow__name mb-2">{name}</h4>
                 <div className="productRow__right-bottom">
                     <div className="productRow__right-bottom--left">
-                        <Button classes="p-small" onClick={onRemoveItem}>-</Button>
+                        <Button classes="p-small br-circle" onClick={onRemoveItem}>-</Button>
                         <span>{itemCount}</span>
-                        <Button classes="p-small" onClick={onAddItem}>+</Button>
-                        <span>X {price}</span>    
+                        <Button classes="p-small br-circle" onClick={onAddItem}>+</Button>
+                        <span>x {price}</span>    
                     </div>  
                     <span>Rs.{price * itemCount}</span>
                 </div>

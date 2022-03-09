@@ -21,15 +21,17 @@ const CartIcon = () => {
             </div>
             <Modal isOpen={isOpen} close={close}>
                 <div className="cart__top">
-                    <h4>My Cart ({myCart.count} items)</h4>
+                    <h4>My Cart {myCart.count > 0 && (
+                        `(${myCart.count} item)`
+                    )}</h4>
                     <span onClick={close} className="cart__top-icon">x</span>
                 </div>
                 <div className="cart__middle">
                     {myCart.count === 0 && (
-                        <>
+                        <div className="cart__emptyMsg">
                             <h3 className="mb-3">No items in your cart</h3>
                             <p>Your favourite items are just a click away</p> 
-                        </>
+                        </div>
                     )}
                     {
                         myCart.count !== 0 && (
@@ -46,11 +48,19 @@ const CartIcon = () => {
                                         />
                                     })
                                 }
+                                <div className="offer-wrapper">
+                                    <img src="/static/images/lowest-price.png"/>
+                                    <span>You won't find it cheaper anywhere</span>
+                                </div>
+            
                             </>
                         )
                     } 
                 </div>
                 <div className="cart__bottom">
+                    {myCart.count !== 0 && (
+                        <p className="mb-2 text-center">Promo code can be applied on payment page</p>
+                    )}
                     <Button classes="w-100">
                         {myCart.count === 0 && "Start shopping"}
                         {myCart.count !== 0 && (

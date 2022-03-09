@@ -22,11 +22,21 @@
     }
 
     &__middle {
-        padding: 15px;
+        background-color: $color-grey-light-1;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
+        height: 70vh;
+        overflow-y: auto;
+        padding: 1rem 0;
+    }
+
+    &__emptyMsg {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     &__bottom {
@@ -34,3 +44,15 @@
     }
 }
 
+.offer-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #fff;
+    padding: 1rem;
+
+    & > img {
+        width: 30%;
+    }
+}

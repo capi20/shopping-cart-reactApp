@@ -24,7 +24,7 @@ const ProductCard = ({name, image, description, price, id}) => {
 
     return (
         <div className="product">
-            <h4 className="product__name">{name}</h4>
+            <h3 className="product__name">{name}</h3>
             <img src={image} alt={name} className="product__image"/>
             <p className="product__description">{shortDescription(description)}</p>
             <div className="product__bottom">

@@ -2,7 +2,6 @@ import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
 import './Header.scss'
-import logo from '../../static/images/logo.png'
 import CartIcon from '../CartIcon/CartIcon'
 
 const Header = () => {
@@ -10,7 +9,7 @@ const Header = () => {
     return (
         <header className="header">
             <Link to="/">
-                <img src={logo} alt="logo" className="header__logo"/>
+                <img src="/static/images/logo.png" alt="logo" className="header__logo"/>
             </Link>
             <nav className="header__nav">
                 <div className="header__nav-left mb-2">
