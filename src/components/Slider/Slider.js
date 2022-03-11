@@ -2,9 +2,12 @@ import React, { useState } from 'react'
 
 import './Slider.scss'
 import sliderData from '../../server/banners/index.get.json'
+import { useMediaQuery } from '../../misc/custom-hooks'
 
 const Slider = () => {
     const [slideIndex, setSlideIndex] = useState(0)
+
+    const isDesktop = useMediaQuery('(min-width: 500px)')
     const totalSlides = sliderData.length
 
     const nextSlide = () => setSlideIndex(slideIndex === totalSlides - 1 ? 0 : slideIndex + 1)
@@ -15,8 +18,14 @@ const Slider = () => {
 
     return (
         <section className="slider">
-            <button className="slider__btn slider__btn-left" onClick={prevSlide}>Prev</button>
-            <button className="slider__btn slider__btn-right" onClick={nextSlide}>Next</button>
+            {
+                isDesktop && (
+                    <>
+                        <button className="slider__btn slider__btn-left" onClick={prevSlide}>Prev</button>
+                        <button className="slider__btn slider__btn-right" onClick={nextSlide}>Next</button>
+                    </>
+                )
+            }
             {
                 sliderData.map((banner, i) => {
                     return (

@@ -24,7 +24,6 @@ const CartIcon = () => {
                     <h4>My Cart {myCart.count > 0 && (
                         `(${myCart.count} item)`
                     )}</h4>
-                    <span onClick={close} className="cart__top-icon">x</span>
                 </div>
                 <div className="cart__middle">
                     {myCart.count === 0 && (
@@ -49,7 +48,7 @@ const CartIcon = () => {
                                     })
                                 }
                                 <div className="offer-wrapper">
-                                    <img src="/static/images/lowest-price.png"/>
+                                    <img src="/static/images/lowest-price.png" alt="Offer"/>
                                     <span>You won't find it cheaper anywhere</span>
                                 </div>
             

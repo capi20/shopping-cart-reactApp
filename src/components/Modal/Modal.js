@@ -13,9 +13,9 @@ function Modal({isOpen, close, children}) {
                     transform: isOpen ? 'translateY(0)' : 'translateY(-100vh)',
                     opacity: isOpen ? '1' : '0'
                 }}>
-                {/* <span className="modal__btn" onClick={close}>
+                <span className="modal__btn" onClick={close}>
                     x
-                </span> */}
+                </span>
                 {children}
             </div>
         </>

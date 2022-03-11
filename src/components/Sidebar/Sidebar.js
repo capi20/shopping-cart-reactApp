@@ -12,7 +12,7 @@ const Sidebar = () => {
             {
                 cartegoryData.map((category, i) => {
                     return (
-                        <NavLink to={`/products/${category.id}`}>
+                        <NavLink key={i} to={`/products/${category.id}`}>
                             <li className={category.id === catId.id ? 'sidebar__item active' : 'sidebar__item'}>
                                 {category.name}    
                             </li>

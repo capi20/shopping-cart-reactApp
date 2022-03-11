@@ -1,7 +1,7 @@
 @import "../../styles/variables.scss";
 
 .modal {
-    position: absolute;
+    position: fixed;
     left: calc((100% - 40vw) / 2);
     top: 10%;
     z-index: 500;
