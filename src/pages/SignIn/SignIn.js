@@ -17,8 +17,7 @@ const SignIn = () => {
         {
             label:"Email",
             val: email,
-            handler: setEmail,
-            type:"email"
+            handler: setEmail
         },
         {
             label:"Password",
@@ -39,18 +38,7 @@ const SignIn = () => {
             val: lastName,
             handler: setLastName
         },
-        {
-            label:"Email",
-            val: email,
-            handler: setEmail,
-            type: "email"
-        },
-        {
-            label:"Password",
-            val: password,
-            handler: setPassword,
-            type: "password"
-        },
+        ...loginForm,
         {
             label: "Confirm Password",
             val: confirmPassword,

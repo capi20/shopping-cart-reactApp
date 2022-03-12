@@ -2,9 +2,10 @@
 
 .input {
     position: relative;
-    height: 4rem;
+    height: 3.5rem;
     width: 40rem;
-    margin-bottom: 25px;
+    margin-bottom: 3rem;
+    font-size: inherit;
 
     @media only screen and (max-width: $bp-medium) {
         width: 35rem;
@@ -39,11 +40,13 @@ input {
 
     &:focus ~ .input__label {
         color: red;
-        transform: translate(-.3rem, -3rem) scale(0.875);
+        transform: translateY(-3rem);
+        font-size: 1.4rem;
     }
       
     &:valid ~ .input__label {
         color: #0fa5a2;
-        transform: translate(-.3rem, -3rem) scale(0.875);
+        transform: translateY(-3rem);
+        font-size: 1.4rem;
     }
 }
