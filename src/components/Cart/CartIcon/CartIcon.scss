@@ -1,0 +1,18 @@
+@import '../../../styles/variables.scss';
+
+.cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    background-color: $color-grey-light-1;
+    cursor: pointer;
+
+    &__logo {
+        width: 4rem;
+
+        @media only screen and (max-width: $bp-small) {
+            width: 3rem;
+        }
+    }
+}

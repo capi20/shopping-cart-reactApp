@@ -13,7 +13,9 @@ const Form = ({heading, description, btnText, form}) => {
             </div>
             <form className="form__right">
                 {form.map((el, i) => {
-                    return <Input label={el.label} 
+                    return <Input 
+                        key={i}
+                        label={el.label} 
                         val={el.val} 
                         onChange={(e) => el.handler(e.target.value)} 
                         type={el.type}/>

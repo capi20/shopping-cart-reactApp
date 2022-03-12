@@ -39,12 +39,10 @@ const addItem = (state, action) => {
 
     if (Object.keys(state.cart).includes(action.item.id)) {
         const modifiedData = {...state.cart[action.item.id], itemCount: state.cart[action.item.id].itemCount + 1}
-        // console.log(modifiedData)
 
         updatedCart = {...state.cart, [action.item.id]: {...modifiedData}}
     } else {
         updatedCart = {...state.cart, [action.item.id]: {...action.item}}
-        console.log(updatedCart)
     }
      
     const updatedState = {
@@ -53,8 +51,6 @@ const addItem = (state, action) => {
         count: state.count + 1,
         purchasing: true
     }
-
-    // console.log(updatedState)
 
     return updateObject(state, updatedState)
 }
@@ -78,8 +74,6 @@ const removeItem = (state, action) => {
         } else {
             updatedCart = {...state.cart, [action.item]: {...modifiedData}}
         }
-
-        console.log(updatedCart)
         
         purchasingState = updatedCount > 0 ? true : false
     } else {

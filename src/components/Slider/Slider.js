@@ -29,8 +29,8 @@ const Slider = () => {
             {
                 sliderData.map((banner, i) => {
                     return (
-                        <div className={i === slideIndex ? 'slide active' : 'slide'}>
-                            {i === slideIndex && (<img key={banner.id} src={banner.bannerImageUrl} alt={banner.bannerImageAlt} className="slider__img"/>)}
+                        <div key={banner.id} className={i === slideIndex ? 'slide active' : 'slide'}>
+                            {i === slideIndex && (<img src={banner.bannerImageUrl} alt={banner.bannerImageAlt} className="slider__img"/>)}
                         </div>
                     )
                 })
