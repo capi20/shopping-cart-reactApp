@@ -8,7 +8,7 @@ import { useMediaQuery, useModalState } from '../../misc/custom-hooks'
 const Header = () => {
     const {isOpen, open, close} = useModalState() 
 
-    const isDesktop = useMediaQuery('(min-width: 600px)')
+    const isDesktop = useMediaQuery('(min-width: 500px)')
 
     return (
         <header className="header">

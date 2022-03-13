@@ -2,6 +2,7 @@ import React from 'react'
 import { useCartItems } from '../../../misc/custom-hooks'
 import Button from '../../Button/Button'
 import ProductRow from '../../ProductRow/ProductRow'
+import { FaAngleRight } from 'react-icons/fa'
 
 import './CartData.scss'
 
@@ -55,7 +56,7 @@ const CartData = () => {
                     {myCart.count !== 0 && (
                         <div className="d-flex justify-content-between">
                             <span>Proceed to Checkout</span>
-                            <span>Rs.{myCart.amount}</span>
+                            <span className="d-flex justify-content-between align-items-center">Rs.{myCart.amount} <FaAngleRight/></span>
                         </div>
                     )}
                 </Button>

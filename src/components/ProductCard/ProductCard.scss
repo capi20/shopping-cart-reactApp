@@ -3,6 +3,7 @@
 .product {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 
     font-size: 1.6rem;
     padding: 10px;
@@ -14,31 +15,50 @@
         margin-bottom: 20px;
     }
 
-    &__name {
-        flex: .1;
-    }
-
-    &__image {
-        flex: .5;
-        width: 70%;
-        margin: auto;
-        cursor: pointer;
-    }
-
-    &__description {
-        height: 100px;
-        background-color: $color-grey-light-1;
-        padding: 1rem;
-    }
-
-    &__bottom {
-        flex: .1;
+    &__info {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+        flex-direction: column;
 
-    &__price {
-        font-weight: bold;
+        @media only screen and (max-width: $bp-small) {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &-image {
+            width: 70%;
+            margin: auto;
+            cursor: pointer;
+            margin-bottom: 2rem;
+    
+            @media only screen and (max-width: $bp-small) {
+                width: 40%;
+                margin-bottom: 0;
+                margin-right: 1.5rem;
+            }
+        }
+
+        &-description {
+            height: 100px;
+            background-color: $color-grey-light-1;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+
+            @media only screen and (max-width: $bp-small) {
+                height: auto;
+            }
+        }
+
+        &-bottom {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            &--price {
+                font-weight: bold;
+                margin-right: auto;
+            }
+        }
     }
 }

@@ -11,12 +11,10 @@ const CartIcon = ({isOpen, open, close}) => {
 
     const [myCart, ] = useCartItems()
 
-    const isDesktop = useMediaQuery('(min-width: 600px)')
+    const isDesktop = useMediaQuery('(min-width: 500px)')
 
     const location = useLocation()
     const isCartPage = location.pathname === "/cart"
-
-    console.log(isCartPage)
 
     const openCart = () => {
         open()

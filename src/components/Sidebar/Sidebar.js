@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-
+import { useLocation } from 'react-router'
 import './Sidebar.scss'
 import { useMediaQuery } from '../../misc/custom-hooks'
 import cartegoryData from '../../server/categories/index.get.json'
@@ -10,14 +10,19 @@ const Sidebar = () => {
     const [selectedCategory, setSelectedCategory] = useState('')
     const [displaySidebar, setDisplaySidebar] = useState(false)
     const catId = useParams()
+    const location = useLocation()
 
-    const isDesktop = useMediaQuery('(min-width: 600px)')
+    const isDesktop = useMediaQuery('(min-width: 500px)')
+    const isProductPage = location.pathname.includes('/products')
 
     useEffect(() => {
-        console.log(cartegoryData)
-        const currentCategory = cartegoryData.filter(p => p.id === catId.id)
-        setSelectedCategory(currentCategory[0].name)
-    }, [])
+        if (isProductPage && catId.id) {
+            const currentCategory = cartegoryData.filter(p => p.id === catId.id)
+            setSelectedCategory(currentCategory[0].name)
+        } else {
+            setSelectedCategory(cartegoryData[0].name)
+        }
+    }, [isDesktop])
 
     const clickHandler = (name) => {
         setSelectedCategory(name)
@@ -52,7 +57,9 @@ const Sidebar = () => {
                         <span className="sidebar-mobile__text">{selectedCategory}</span>
                         <span className="sidebar-mobile__icon"><FaAngleDown/></span>
                     </div>
-                    {displaySidebar && sidebar}
+                    <div className="sidebar-wrapper">
+                        {displaySidebar && sidebar}
+                    </div>
                 </div>
             }
         </>

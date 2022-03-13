@@ -6,14 +6,7 @@
     flex: 0.25;
 
     @media only screen and (max-width: $bp-medium) {
-        flex: 0.5;
-    }
-
-    @media only screen and (max-width: $bp-small) {
-        position: absolute;
-        z-index: 10;
-        width: 100%;
-        background-color: $color-grey-light-2;
+        flex: 0.35;
     }
 
     &__item {
@@ -23,10 +16,6 @@
 
         &:hover {
             background-color: $color-grey-light-2;
-
-            @media only screen and (max-width: $bp-small) {
-                background-color: $color-grey-light-3;
-            }
         }
 
         &.active {
@@ -47,5 +36,12 @@
         // &__icon {
         //     font-size: 3rem;
         // }
+    }
+
+    &-wrapper {
+        background-color: #fff;
+        position: absolute;
+        z-index: 10;
+        width: 100%;
     }
 }
