@@ -4,8 +4,12 @@
     padding: 0 13vw;
     display: flex;
 
-    @media only screen and (max-width: 62.5em) {
+    @media only screen and (max-width: $bp-large) {
         padding: 0;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        flex-direction: column;
     }
 }
 

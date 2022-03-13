@@ -9,6 +9,13 @@
         flex: 0.5;
     }
 
+    @media only screen and (max-width: $bp-small) {
+        position: absolute;
+        z-index: 10;
+        width: 100%;
+        background-color: $color-grey-light-2;
+    }
+
     &__item {
         list-style: none;
         padding: 15px;
@@ -16,10 +23,29 @@
 
         &:hover {
             background-color: $color-grey-light-2;
+
+            @media only screen and (max-width: $bp-small) {
+                background-color: $color-grey-light-3;
+            }
         }
 
         &.active {
             background-color: $color-grey-light-2;
         }
+    }
+
+    &-mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $color-primary;
+        color: #fff;
+        font-size: 2rem;
+        padding: 1.5rem 3rem;
+        cursor: pointer;
+
+        // &__icon {
+        //     font-size: 3rem;
+        // }
     }
 }
