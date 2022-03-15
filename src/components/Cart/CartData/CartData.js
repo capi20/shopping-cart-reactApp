@@ -6,11 +6,14 @@ import { FaAngleRight } from 'react-icons/fa'
 
 import './CartData.scss'
 
-const CartData = () => {
+const CartData = ({occupiedHeight}) => {
     const [myCart, ] = useCartItems()
 
     return (
-        <div className="cart-wrapper">
+        <div className="cart-wrapper"
+            style={{
+                height: `calc(100vh - ${occupiedHeight}px)`
+            }}>
             <div className="cart-wrapper__top">
                 <h4>My Cart {myCart.count > 0 && (
                     `(${myCart.count} item)`

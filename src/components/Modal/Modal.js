@@ -2,6 +2,7 @@ import React from 'react'
 
 import './Modal.scss'
 import BackDrop from '../Backdrop/Backdrop'
+import { FaRegTimesCircle } from 'react-icons/fa'
 
 function Modal({isOpen, close, children}) {
     return (
@@ -14,7 +15,7 @@ function Modal({isOpen, close, children}) {
                     opacity: isOpen ? '1' : '0'
                 }}>
                 <span className="modal__btn" onClick={close}>
-                    x
+                    <FaRegTimesCircle/>
                 </span>
                 {children}
             </div>

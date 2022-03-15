@@ -22,7 +22,7 @@ const Sidebar = () => {
         } else {
             setSelectedCategory(cartegoryData[0].name)
         }
-    }, [isDesktop])
+    }, [isDesktop, catId, isProductPage])
 
     const clickHandler = (name) => {
         setSelectedCategory(name)

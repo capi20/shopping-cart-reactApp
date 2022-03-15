@@ -5,13 +5,13 @@ import './Header.scss'
 import CartIcon from '../Cart/CartIcon/CartIcon'
 import { useMediaQuery, useModalState } from '../../misc/custom-hooks'
 
-const Header = () => {
+const Header = ({occupiedHeight}) => {
     const {isOpen, open, close} = useModalState() 
 
     const isDesktop = useMediaQuery('(min-width: 500px)')
 
     return (
-        <header className="header">
+        <div className="header">
             <Link to="/" onClick={close}>
                 <img src="/static/images/logo.png" alt="logo" className="header__logo"/>
             </Link>
@@ -38,10 +38,11 @@ const Header = () => {
                     <CartIcon
                         isOpen={isOpen}
                         open={open}
-                        close={close}/>
+                        close={close}
+                        occupiedHeight={occupiedHeight}/>
                 </div>
             </nav>
-        </header>
+        </div>
     )
 }
 

@@ -7,21 +7,37 @@ import SignIn from './pages/SignIn/SignIn'
 import './styles/main.scss'
 import { CartProvider } from './misc/custom-hooks';
 import Cart from './pages/Cart/Cart';
+import { useEffect, useRef, useState } from 'react';
 
 function App() {
+  const headerRef = useRef()
+  const footerRef = useRef()
+  const [occupiedHeight, setOccupiedHeight] = useState()
+
+  useEffect(() => {
+      if (headerRef.current && footerRef.current) {
+        const totalHeight = headerRef.current.scrollHeight + footerRef.current.scrollHeight
+        setOccupiedHeight(totalHeight)
+      }
+  }, [headerRef, footerRef])
+
   return (
     <CartProvider>
       <div className="app">
-        <Header/>
+        <header ref={headerRef}>
+          <Header occupiedHeight={occupiedHeight}/>
+        </header>
         <Routes>
           <Route path="/signin" element={<SignIn/>}/>
           <Route path="/register" element={<SignIn/>}/>
           <Route path="/products" element={<Product/>}/>
           <Route path="/products/:id" element={<Product/>}/>
-          <Route path="/cart" element={<Cart/>}/>
+          <Route path="/cart" element={<Cart occupiedHeight={occupiedHeight}/>}/>
           <Route path="/" element={<Home/>}/>
         </Routes>
-        <Footer/>
+        <footer ref={footerRef}>
+          <Footer/>
+        </footer>
       </div>
     </CartProvider>
   );

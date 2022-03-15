@@ -1,9 +1,10 @@
 import React from 'react'
 import CartData from '../../components/Cart/CartData/CartData'
 
-const Cart = () => {
+const Cart = ({occupiedHeight}) => {
+
     return (
-        <CartData/>
+        <CartData occupiedHeight={occupiedHeight}/>
     )
 }
 

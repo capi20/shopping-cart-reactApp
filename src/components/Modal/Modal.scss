@@ -3,7 +3,6 @@
 .modal {
     position: fixed;
     left: calc((100% - 40vw) / 2);
-    top: 10%;
     z-index: 500;
     width: 40vw;
     border: none;
@@ -16,17 +15,22 @@
         left: calc((100% - 60vw) / 2);
     }
 
+    @media only screen and (max-width: $bp-medium) {
+        width: 75vw;
+        left: calc((100% - 75vw) / 2);
+    }
+
     &__btn {
         position: absolute;
-        right: 20px;
-        top: 5px;
+        right: 15px;
+        top: 15px;
         font-weight: bold;
-        font-size: 2.5rem;
-        color: gray;
+        font-size: 2rem;
+        color: $color-grey-light-2;
         cursor: pointer;
 
         &:hover {
-            color: hsl(0, 70%, 50%);
+            color: $color-grey-light-3;
         }
     }
 }

@@ -6,7 +6,7 @@ import CartData from '../CartData/CartData'
 
 import './CartIcon.scss'
 
-const CartIcon = ({isOpen, open, close}) => {
+const CartIcon = ({isOpen, open, close, occupiedHeight}) => {
     const [previousRoute, setPreviousRoute] = useState('')
 
     const [myCart, ] = useCartItems()
@@ -35,7 +35,7 @@ const CartIcon = ({isOpen, open, close}) => {
                 isOpen && <>
                     {isCartPage && <Navigate to={previousRoute}/>}
                     <Modal isOpen={isOpen} close={close}>
-                        <CartData/>
+                        <CartData occupiedHeight={occupiedHeight}/>
                     </Modal>
                 </> :
                 isOpen && !isCartPage && <Navigate to="/cart"/>

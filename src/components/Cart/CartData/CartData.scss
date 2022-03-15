@@ -2,6 +2,9 @@
 
 .cart-wrapper {
     font-size: 1.7rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 
     &__top {
         display: flex;
@@ -13,12 +16,13 @@
     }
 
     &__middle {
+        position: relative;
         background-color: $color-grey-light-1;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        height: 72.4vh;
+        height: 100%;
         overflow-y: auto;
         padding: 1rem 0;
     }
