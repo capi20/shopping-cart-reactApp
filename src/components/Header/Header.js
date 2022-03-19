@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
 import './Header.scss'
-import CartIcon from '../Cart/CartIcon/CartIcon'
+import CartIcon from '../CartIcon/CartIcon'
 import { useMediaQuery, useModalState } from '../../misc/custom-hooks'
 
 const Header = ({occupiedHeight}) => {
@@ -17,7 +17,7 @@ const Header = ({occupiedHeight}) => {
             </Link>
             <nav className="header__nav">
                 {isDesktop && (
-                    <div className="header__nav-left mb-2">
+                    <div className="header__nav-left">
                         <NavLink to="/" className="header__nav-link"  onClick={close}>
                             Home    
                         </NavLink>

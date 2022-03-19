@@ -6,7 +6,7 @@ import Sidebar from '../../components/Sidebar/Sidebar'
 import { useModalState } from '../../misc/custom-hooks'
 import productData from '../../server/products/index.get.json'
 
-import './Product.scss'
+import './Products.scss'
 
 const Product = () => {
   const [displayProduct, setDisplayProduct] = useState({})
@@ -32,9 +32,9 @@ const Product = () => {
   }
   
     return (
-      <div className="product__wrapper">
+      <main className="product__wrapper">
         <Sidebar/>
-        <div className="products__list">
+        <section className="products__list">
           {
             filteredData.map((product, i) => {
               return(
@@ -49,7 +49,7 @@ const Product = () => {
               )
             })
           }  
-        </div>
+        </section>
         <Modal isOpen={isOpen} close={close}>
           <div className="product__modal">
             <h3>{displayProduct.name}</h3>
@@ -57,7 +57,7 @@ const Product = () => {
             <p>{displayProduct.description}</p>  
           </div>
         </Modal>
-      </div>
+      </main>
       
     )
 }

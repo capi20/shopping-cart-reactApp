@@ -4,9 +4,9 @@ import './Footer.scss'
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <p className="footer">
         Copyright &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt. Ltd. 
-    </div>
+    </p>
   )
 }
 

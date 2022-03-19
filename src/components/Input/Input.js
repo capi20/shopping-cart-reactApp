@@ -4,9 +4,9 @@ import './Input.scss'
 
 const Input = ({label, val, onChange, type}) => {
   return (
-    <div className="input">
+    <div className="input-wrapper">
         <input type={type ? type : "text"} value={val} onChange={onChange} required/>
-        <div className="input__label">{label}</div>
+        <label className="input-wrapper__label">{label}</label>
     </div>
   )
 }

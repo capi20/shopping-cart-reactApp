@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Navigate, useLocation } from 'react-router'
-import { useCartItems, useMediaQuery } from '../../../misc/custom-hooks'
-import Modal from '../../Modal/Modal'
-import CartData from '../CartData/CartData'
+import { useCartItems, useMediaQuery } from '../../misc/custom-hooks'
+import Modal from '../Modal/Modal'
+import CartData from './CartData/CartData'
 
 import './CartIcon.scss'
 

@@ -1,6 +1,6 @@
 @import '../../styles/variables.scss';
 
-.input {
+.input-wrapper {
     position: relative;
     height: 3.5rem;
     width: 40rem;
@@ -38,13 +38,13 @@ input {
         border-color: #0fa5a2;
     }
 
-    &:focus ~ .input__label {
+    &:focus ~ .input-wrapper__label {
         color: red;
         transform: translateY(-3rem);
         font-size: 1.4rem;
     }
       
-    &:valid ~ .input__label {
+    &:valid ~ .input-wrapper__label {
         color: #0fa5a2;
         transform: translateY(-3rem);
         font-size: 1.4rem;

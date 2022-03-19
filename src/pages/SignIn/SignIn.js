@@ -48,10 +48,12 @@ const SignIn = () => {
     ]
 
     return (
-        <Form heading={isSignup ? 'Signup' : 'Login'} 
-            description={isSignup ? "We do not share your personal details with anyone." : "Get access to your Orders, Wishlist and Recommendations"}
-            btnText={isSignup ? 'Signup' : 'Login'} 
-            form={isSignup ? signupForm : loginForm}/>
+        <main>
+            <Form heading={isSignup ? 'Signup' : 'Login'} 
+                description={isSignup ? "We do not share your personal details with anyone." : "Get access to your Orders, Wishlist and Recommendations"}
+                btnText={isSignup ? 'Signup' : 'Login'} 
+                form={isSignup ? signupForm : loginForm}/>
+        </main>
     )
 }
 

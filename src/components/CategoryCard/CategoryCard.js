@@ -12,14 +12,14 @@ const CategoryCard = ({ image, heading, description, btnText, index, id}) => {
     }
     
     return (
-        <div className={(index + 1) % 2 === 0 ? 'category reverse' : 'category'}>
+        <section className={(index + 1) % 2 === 0 ? 'category reverse' : 'category'}>
             <img src={image} alt={heading} className="category__image"/>
             <div className="category__right">
-                <h2 className="category__heading">{heading}</h2>
-                <p className="category__description">{description}</p>
+                <h2 className="category__right-heading">{heading}</h2>
+                <p className="category__right-description">{description}</p>
                 <Button onClick={() => onBtnClick(id)}>{`Explore ${btnText}`}</Button>
             </div>
-        </div>
+        </section>
     )
 }
 

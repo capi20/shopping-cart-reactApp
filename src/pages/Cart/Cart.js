@@ -1,10 +1,12 @@
 import React from 'react'
-import CartData from '../../components/Cart/CartData/CartData'
+import CartData from '../../components/CartIcon/CartData/CartData'
 
 const Cart = ({occupiedHeight}) => {
 
     return (
-        <CartData occupiedHeight={occupiedHeight}/>
+        <main>
+            <CartData occupiedHeight={occupiedHeight}/>
+        </main>
     )
 }
 

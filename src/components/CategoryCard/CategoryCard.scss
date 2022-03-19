@@ -7,14 +7,14 @@
 
     font-size: 1.6rem;
     text-align: center;
-    padding: 20px;
+    padding: 3rem 2rem 2rem;
     
     &:not(:last-child) {
         box-shadow: $box-shadow-dark;
     }
 
     &__image {
-        width: 30%;
+        width: 35%;
 
         @media only screen and (max-width: $bp-small) {
             width: 40%;
@@ -24,7 +24,11 @@
     &__right {
         flex: 1;
 
-        & > * {
+        &-heading {
+            margin-bottom: 2rem;
+        }
+
+        &-description {
             margin-bottom: 2rem;
         }
     }

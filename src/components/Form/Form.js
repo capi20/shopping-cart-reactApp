@@ -6,11 +6,11 @@ import Input from '../Input/Input'
 
 const Form = ({heading, description, btnText, form}) => {
     return (
-        <div className="form">
-            <div className="form__left">
-                <h1 className="form__heading mb-3">{heading}</h1>
+        <article className="form">
+            <section className="form__left">
+                <h2 className="form__heading mb-3">{heading}</h2>
                 <p className="form__description">{description}</p>    
-            </div>
+            </section>
             <form className="form__right">
                 {form.map((el, i) => {
                     return <Input 
@@ -22,7 +22,7 @@ const Form = ({heading, description, btnText, form}) => {
                     })}
                     <Button classes="w-100 mt-2 mb-2">{btnText}</Button>
             </form>
-        </div>
+        </article>
     )
 }
 

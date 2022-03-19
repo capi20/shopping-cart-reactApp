@@ -9,18 +9,20 @@ const Home = () => {
     return (
       <main className="home">
           <Slider/>
-            { categoryData.map((category, index) => {
-              return (
-                <CategoryCard 
-                  key={category.id}
-                  image={category.imageUrl}
-                  heading={category.name}
-                  description={category.description}
-                  btnText={category.key}
-                  index={index}
-                  id={category.id}/>
-              )
-          })}
+          <article>
+              { categoryData.map((category, index) => {
+                return (
+                  <CategoryCard 
+                    key={category.id}
+                    image={category.imageUrl}
+                    heading={category.name}
+                    description={category.description}
+                    btnText={category.key}
+                    index={index}
+                    id={category.id}/>
+                )
+            })}
+          </article>
       </main>
     )
 }

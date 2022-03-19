@@ -10,7 +10,7 @@ const CartData = ({occupiedHeight}) => {
     const [myCart, ] = useCartItems()
 
     return (
-        <div className="cart-wrapper"
+        <section className="cart-wrapper"
             style={{
                 height: `calc(100vh - ${occupiedHeight}px)`
             }}>
@@ -64,7 +64,7 @@ const CartData = ({occupiedHeight}) => {
                     )}
                 </Button>
             </div>
-        </div>
+        </section>
     )
 }
 

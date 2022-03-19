@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router'
+import { useLocation, useNavigate } from 'react-router'
+import { useParams } from 'react-router-dom'
+
 import './Sidebar.scss'
-import { useMediaQuery } from '../../misc/custom-hooks'
 import cartegoryData from '../../server/categories/index.get.json'
-import { NavLink, useParams } from 'react-router-dom'
+import { useMediaQuery } from '../../misc/custom-hooks'
 import { FaAngleDown } from 'react-icons/fa'
 
 const Sidebar = () => {
@@ -11,6 +12,7 @@ const Sidebar = () => {
     const [displaySidebar, setDisplaySidebar] = useState(false)
     const catId = useParams()
     const location = useLocation()
+    const navigate = useNavigate()
 
     const isDesktop = useMediaQuery('(min-width: 500px)')
     const isProductPage = location.pathname.includes('/products')
@@ -24,45 +26,49 @@ const Sidebar = () => {
         }
     }, [isDesktop, catId, isProductPage])
 
-    const clickHandler = (name) => {
+    const clickHandler = (name, id) => {
         setSelectedCategory(name)
         setDisplaySidebar(false)
+        navigate(`/products/${id}`)
     }
 
     const sidebar = (
-        <ul className="sidebar">
-            {
-                cartegoryData.map((category, i) => {
-                    return (
-                        <NavLink key={i} to={`/products/${category.id}`} onClick={() => clickHandler(category.name)}>
-                            <li className={category.id === catId.id ? 'sidebar__item active' : 'sidebar__item'}>
-                                {category.name}    
+        <nav className="sidebar">
+            <ul>
+                {
+                    cartegoryData.map((category, i) => {
+                        return (
+                            <li 
+                                key={category.id}
+                                className={category.id === catId.id ? 'sidebar__item active' : 'sidebar__item'}
+                                onClick={() => clickHandler(category.name, category.id)}>
+                                    {category.name}
                             </li>
-                        </NavLink>
-                    )
-                })
-            }
-        </ul>
+                        )
+                    })
+                }
+            </ul>
+        </nav>
     )
     
     return (
-        <>
+        <aside>
             { 
                 isDesktop ?
                 {...sidebar} :
-                <div>
+                <>
                     <div 
                         className="sidebar-mobile" 
                         onClick={() => setDisplaySidebar(!displaySidebar)}>
                         <span className="sidebar-mobile__text">{selectedCategory}</span>
                         <span className="sidebar-mobile__icon"><FaAngleDown/></span>
                     </div>
-                    <div className="sidebar-wrapper">
-                        {displaySidebar && sidebar}
+                    <div className={displaySidebar ? 'sidebar-active sidebar-wrapper' : 'sidebar-wrapper'}>
+                        {sidebar}
                     </div>
-                </div>
+                </>
             }
-        </>
+        </aside>
     )
 }
 
