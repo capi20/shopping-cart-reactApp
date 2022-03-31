@@ -15,9 +15,9 @@ const CartData = ({occupiedHeight}) => {
                 height: `calc(100vh - ${occupiedHeight}px)`
             }}>
             <div className="cart-wrapper__top">
-                <h4>My Cart {myCart.count > 0 && (
+                <h3>My Cart {myCart.count > 0 && (
                     `(${myCart.count} item)`
-                )}</h4>
+                )}</h3>
             </div>
             <div className="cart-wrapper__middle">
                 {myCart.count === 0 && (

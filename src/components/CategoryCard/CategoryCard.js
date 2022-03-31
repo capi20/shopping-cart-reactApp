@@ -12,7 +12,7 @@ const CategoryCard = ({ image, heading, description, btnText, index, id}) => {
     }
     
     return (
-        <section className={(index + 1) % 2 === 0 ? 'category reverse' : 'category'}>
+        <section className="category">
             <img src={image} alt={heading} className="category__image"/>
             <div className="category__right">
                 <h2 className="category__right-heading">{heading}</h2>

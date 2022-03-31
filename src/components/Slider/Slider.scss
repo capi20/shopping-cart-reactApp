@@ -29,8 +29,24 @@
         }
     }
 
+    &__box {
+        opacity: 0;
+        transform: scale(.5, .5);
+
+        &.active {
+            opacity: 1;
+            transform: scale(1, 1);
+            transition: opacity .3s, transform .4s ease-in-out;
+        }
+    }
+
     &__img {
         width: 100%;
+        display: none;
+
+        &.active {
+            display: block;
+        }
     }
 
     &__dots {
@@ -50,15 +66,5 @@
         & > .dot-active {
             background-color: rgba(0,0,0,0.6);
         }
-    }
-}
-
-.slide {
-    opacity: 0;
-    transition-duration: 1s ease;
-
-    &.active {
-        opacity: 1;
-        transition-duration: 1s;
     }
 }
