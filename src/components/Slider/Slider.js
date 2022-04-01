@@ -26,15 +26,17 @@ const Slider = () => {
                     </>
                 )
             }
-            {
-                sliderData.map((banner, i) => {
-                    return (
-                        <div key={banner.id} className={i === slideIndex ? 'slider__box active' : 'slider__box'}>
-                            <img src={banner.bannerImageUrl} alt={banner.bannerImageAlt} className={i === slideIndex ? "slider__img active" : "slider__img" }/>
-                        </div>
-                    )
-                })
-            }
+            <div className="slider__container">
+                {
+                    sliderData.map((banner, i) => {
+                        return (
+                            <div key={banner.id} className={i === slideIndex ? 'slider__container-banner active' : 'slider__container-banner'}>
+                                {i === slideIndex && <img src={banner.bannerImageUrl} alt={banner.bannerImageAlt} className="slider__container-banner--img"/>}
+                            </div>
+                        )
+                    })
+                }
+            </div>
             <div className="slider__dots">
                 {
                     sliderData.map((banner, index) => {
