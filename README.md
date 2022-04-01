@@ -1,3 +1,14 @@
+# Sbka Bazaar
+
+An online store where you can shop for your daily needs. [Click here](https://sbka-bazaar.web.app/) to visit the site
+
+Dependencies
+
+- react
+- react-router
+- node-sass
+- react-icons
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
